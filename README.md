@@ -34,7 +34,7 @@ BUY 01/03/2018 GB00B41YBW71 1000 3.6093 2
 ```
 
 ```
-Disposed of 2000 units of GB00B41YBW71 held in section 104
+2019-11-08: Disposed of 2000 units of GB00B41YBW71 held in section 104
   gain/loss: 2000 * (4.67 - 3.89) - 12.5 = 1547.60
 
               Current section 104 holdings

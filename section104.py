@@ -90,7 +90,8 @@ for symbol, value in events_by_symbol.items():
             tax_events.append(tax_event)
 
             console.print(
-                    'Disposed of [cyan]%s[/] units of [bold]%s[/] held in section 104' % (
+                    '[bold]%s[/]: Disposed of [cyan]%s[/] units of [bold]%s[/] held in section 104' % (
+                    str(event.date),
                     event.quantity,
                     symbol
                     ))
