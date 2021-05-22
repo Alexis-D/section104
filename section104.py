@@ -64,7 +64,8 @@ for symbol, value in events_by_symbol.items():
 
                 if duration.days <= 30 and future_event.kind == 'BUY':
                     console.print(
-                            '[bold red]This _only_ supports section 104 holdings:\n%s\n%s\n%s[/]' %
+                            '[bold red]This _only_ supports section 104'
+                            'holdings:\n%s\n%s\n%s[/]' %
                             (event, future_event, duration))
                     sys.exit(2)
 
@@ -90,18 +91,18 @@ for symbol, value in events_by_symbol.items():
             tax_events.append(tax_event)
 
             console.print(
-                    '[bold]%s[/]: Disposed of [cyan]%s[/] units of [bold]%s[/] held in section 104' % (
+                '[bold]%s[/]: Disposed of [cyan]%s[/] units of [bold]%s[/]'
+                'held in section 104' % (
                     str(event.date),
                     event.quantity,
-                    symbol
-                    ))
-            console.print('  gain/loss: %s * (%.2f - %.2f) - %s = [bold cyan]%.2f[/]' % (
-                event.quantity,
-                event.cost,
-                section104.total_cost / section104.quantity,
-                event.fees,
-                tax_event.value
-                ))
+                    symbol))
+            console.print(
+                '  gain/loss: %s * (%.2f - %.2f) - %s = [bold cyan]%.2f[/]' % (
+                    event.quantity,
+                    event.cost,
+                    section104.total_cost / section104.quantity,
+                    event.fees,
+                    tax_event.value))
             console.print()
 
             section104 = Section104(
@@ -150,6 +151,7 @@ for symbol, section104 in sorted(
 
 console.print(table)
 
+
 def tax_year(tax_event):
     date = tax_event.date
 
@@ -162,6 +164,7 @@ def tax_year(tax_event):
             return '%d/%d' % (date.year - 1, date.year)
         else:
             return '%d/%d' % (date.year, date.year + 1)
+
 
 console.print()
 console.print('Tax year summaries:', style='bold')
